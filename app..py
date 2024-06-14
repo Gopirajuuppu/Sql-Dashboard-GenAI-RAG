@@ -3,9 +3,6 @@ from openai import OpenAI
 from src.langchain_utils import invoke_chain
 st.title("Gen AI - NL-SQL Chatbot")
 
-# Set OpenAI API key from Streamlit secrets
-client = OpenAI(api_key="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")  
-
 # Set a default model
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-3.5-turbo"
