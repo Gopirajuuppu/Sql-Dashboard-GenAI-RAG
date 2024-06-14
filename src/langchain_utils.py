@@ -9,7 +9,7 @@ db_password = os.getenv("db_password")
 db_host = os.getenv("db_host")
 db_name = os.getenv("db_name")
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+#OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 LANGCHAIN_TRACING_V2 = os.getenv("LANGCHAIN_TRACING_V2")
 LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
 
