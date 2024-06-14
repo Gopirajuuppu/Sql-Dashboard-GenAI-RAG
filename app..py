@@ -1,6 +1,7 @@
 import streamlit as st
 from openai import OpenAI
 from src.langchain_utils import invoke_chain
+
 st.title("Gen AI - NL-SQL Chatbot")
 
 # Set a default model

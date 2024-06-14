@@ -5,13 +5,13 @@ from operator import itemgetter
 from langchain.chains.openai_tools import create_extraction_chain_pydantic
 from langchain_core.pydantic_v1 import BaseModel, Field
 from langchain_openai import ChatOpenAI
+from dotenv import load_dotenv
 
-OPENAI_API_KEY=''
-password = st.sidebar.text_input("Password", type="password") 
-if st.button("Submit"): 
-    OPENAI_API_KEY=password
-#OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+#Loading all cred from creds.env
+print(load_dotenv('./creds.env'))
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 llm = ChatOpenAI(model="gpt-3.5-turbo-1106", temperature=0,api_key=OPENAI_API_KEY)
+
 from typing import List
 
 @st.cache_data

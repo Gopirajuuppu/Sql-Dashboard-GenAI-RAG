@@ -1,18 +1,5 @@
 import os
 from dotenv import load_dotenv
-
-#Loading all cred from creds.env
-print(load_dotenv('./creds.env'))
-
-db_user = os.getenv("db_user")
-db_password = os.getenv("db_password")
-db_host = os.getenv("db_host")
-db_name = os.getenv("db_name")
-
-#OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-LANGCHAIN_TRACING_V2 = os.getenv("LANGCHAIN_TRACING_V2")
-LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
-
 from langchain_community.utilities.sql_database import SQLDatabase
 from langchain.chains import create_sql_query_chain
 from langchain_openai import ChatOpenAI
@@ -30,6 +17,21 @@ from src.table_details import table_chain as select_table
 from src.prompts import final_prompt, answer_prompt
 
 import streamlit as st
+
+#Loading all cred from creds.env
+print(load_dotenv('./creds.env'))
+
+db_user = os.getenv("db_user")
+db_password = os.getenv("db_password")
+db_host = os.getenv("db_host")
+db_name = os.getenv("db_name")
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+LANGCHAIN_TRACING_V2 = os.getenv("LANGCHAIN_TRACING_V2")
+LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY")
+
+
+
 @st.cache_resource
 def get_chain():
     print("Creating chain")
